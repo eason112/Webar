@@ -21,7 +21,11 @@
         <a-scene embedded arjs="source: webcam;">
             <a-camera gps-camera="simulateLatitude:-6.175628;simulateLongitude:106.827188"
             rotation-reader>
-            <a-text value="212312" scale="15 15 15"
+            <a-text 
+                value="212312" 
+                scale="15 15 15"
+                look-at="[gps-camera]"
+                align="center"
                 gps-entity-place="latitude:-6.173708;longitude:106.827184;"
             ></a-text>
 
