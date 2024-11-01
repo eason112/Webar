@@ -20,15 +20,14 @@
             });
         </script>
         <a-scene embedded arjs="source: webcam;">
-            <a-camera gps-camera="simulateLatitude:-6.175628;simulateLongitude:106.827188"
+            <a-camera gps-camera="simulateLatitude:25.0090382;simulateLongitude:121.5027293"
             rotation-reader></a-camera>
-            <a-text 
-                value="212312" 
-                scale="15 15 15"
+            <a-box color="red"
                 look-at="[gps-camera]"
                 align="center"
-                gps-entity-place="latitude:-6.173708;longitude:106.827184;"
-            ></a-text>
+                gps-entity-place="latitude:25.0090300;longitude:121.5027200;"
+                depth="10" height="10" width="10"
+            ></a-box>
         </a-scene>
     </body>
 </html>
