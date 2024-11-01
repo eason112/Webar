@@ -21,11 +21,11 @@
                 }
             });
         </script>
-        <a-scene embedded arjs="source: webcam;">
+        <a-scene arjs='source: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
             <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
             <a-box color="red"
                 gps-new-entity-place="latitude:25.0090382;longitude:121.5027293;"
-                depth="1" height="1" width="1"
+                depth="10" height="10" width="10"
             ></a-box>
         </a-scene>
     </body>
