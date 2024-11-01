@@ -8,6 +8,8 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js'></script>
+        <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
     </head>
     <body>
         <script>
@@ -23,7 +25,7 @@
             <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
             <a-box color="red"
                 gps-new-entity-place="latitude:25.0090382;longitude:121.5027293;"
-                depth="10" height="10" width="10"
+                depth="1" height="1" width="1"
             ></a-box>
         </a-scene>
     </body>
