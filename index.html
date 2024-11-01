@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <title>WebAR</title>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
@@ -19,7 +19,7 @@
             });
         </script>
         <a-scene embedded arjs="source: webcam;">
-            <a-camera locationfinder gps-camera="simulateLatitude:-6.175628;simulateLongitude:106.827188"
+            <a-camera gps-camera="simulateLatitude:-6.175628;simulateLongitude:106.827188"
             rotation-reader>
             <a-text value="212312" scale="15 15 15"
                 gps-entity-place="latitude:-6.173708;longitude:106.827184;"
