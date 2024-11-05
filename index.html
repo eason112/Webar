@@ -43,6 +43,7 @@
     </div>
     <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
     <!-- a-frame scene -->
+     <div id="container">
       <a-scene
         vr-mode-ui="enabled: false;"
         renderer="logarithmicDepthBuffer: true;"
@@ -74,6 +75,7 @@
         <!-- static camera that moves according to the device movemenents -->
         <a-entity camera></a-entity>
       </a-scene>
+    </div>
     <script>
       // 獲取 a-nft 元素
       var trexMarker = document.querySelector('#trex-marker');
