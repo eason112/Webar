@@ -56,16 +56,17 @@
         <!-- on 'url' use the path to the Image Descriptors created before. -->
         <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
         <a-nft
+          videohandler
           id="trex-marker"
           type="nft"
-          url="https://raw.githack.com/eason112/Webar/main/assets/nft/trex"
+          url="https://raw.githack.com/eason112/Webar/main/assets/nft/image3"
           smooth="true"
           smoothCount="10"
           smoothTolerance="0.01"
           smoothThreshold="5">
           <a-video
           src="#vid"
-          position='100 200 200'
+          position='100 500 0'
           rotation='-90 180 180'
           width='300'
           height='175'
@@ -78,16 +79,6 @@
         <a-entity camera></a-entity>
       </a-scene>
     <script>
-      // 獲取 a-nft 元素
-      var trexMarker = document.querySelector('#trex-marker');
-
-      // 監聽 markerFound 事件
-      trexMarker.addEventListener('markerFound', function (event) {
-        console.log('Marker found!');
-        // 在識別到標記後，執行某些動作
-        alert('AR marker has been found!');
-      });
-
       window.onload = function() {
         AFRAME.registerComponent('videohandler', {
             init: function () {
