@@ -56,7 +56,7 @@
         smoothTolerance="0.01"
         smoothThreshold="5">
           <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-          <a-box color="red"></a-box>
+        <a-box color="red"></a-box>
       </a-nft>
       <!-- static camera that moves according to the device movemenents -->
       <a-entity camera></a-entity>
@@ -69,14 +69,14 @@
       trexMarker.addEventListener('markerFound', function (event) {
         console.log('Marker found!');
         // 在識別到標記後，執行某些動作
-        alert('AR marker has been found!');
+        //alert('AR marker has been found!');
       });
 
       // 監聽 markerLost 事件 (可選，當標記消失時)
       trexMarker.addEventListener('markerLost', function (event) {
         console.log('Marker lost!');
         // 在標記消失時，執行某些動作
-        alert('AR marker has been lost!');
+        //alert('AR marker has been lost!');
       });
     </script>
   </body>
