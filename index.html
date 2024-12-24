@@ -7,15 +7,27 @@
   <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js/aframe/build/aframe-ar.js"></script>
   <style>
 
-
-  
+body {
+      margin: 0;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
   <a-scene embedded arjs>
     <!-- 相機設定 -->
     <a-camera id="camera" position="0 1.6 0"></a-camera>
+ <!-- 靜態海草或珊瑚（用三角形代替） -->
+    <!-- 海草 -->
+    <a-cone id="seaweed1" radius-bottom="0.2" height="1" color="green"></a-cone>
+    <a-cone id="seaweed2" radius-bottom="0.2" height="1" color="green"></a-cone>
+    <a-cone id="seaweed3" radius-bottom="0.3" height="1.2" color="lightgreen"></a-cone>
+    <a-cone id="seaweed4" radius-bottom="0.3" height="1.2" color="lightgreen"></a-cone>
 
+    <a-cone id="coral1" radius-bottom="0.4" height="1.5" color="red"></a-cone>
+    <a-cone id="coral2" radius-bottom="0.4" height="1.5" color="orange"></a-cone>
+    <a-cone id="coral3" radius-bottom="0.3" height="1" color="pink"></a-cone>
+    <a-cone id="coral4" radius-bottom="0.3" height="1" color="purple"></a-cone>
     <!-- 這裡是圓周運動的方塊（魚） -->
     <a-box id="fish1" width="0.5" height="0.2" depth="0.2" color="blue"></a-box>
     <a-box id="fish2" width="0.5" height="0.2" depth="0.2" color="red"></a-box>
@@ -81,9 +93,28 @@
       // 繼續更新
       requestAnimationFrame(updateFishPosition);
     }
+     // 隨機放置靜態物件（海草和珊瑚）在相機的四面八方
+     function setStaticObjectsPositions() {
+      const staticObjects = ['seaweed1', 'seaweed2', 'seaweed3', 'seaweed4', 'coral1', 'coral2', 'coral3', 'coral4'];
+
+      staticObjects.forEach(id => {
+        const object = document.getElementById(id);
+
+        // 隨機生成物件的座標，讓物件分佈在四周
+        const angleOffset = Math.random() * Math.PI * 2;  // 隨機角度
+        const radius = Math.random() * 3 + 2;  // 隨機距離相機的距離
+        const x = radius * Math.cos(angleOffset);  // 計算 x 坐標
+        const z = radius * Math.sin(angleOffset);  // 計算 z 坐標
+        const y = Math.random() * 1 + 1.5;  // 隨機的 y 坐標，放在水面上方
+
+        // 設置靜態物件的座標
+        object.setAttribute('position', { x: x, y: 0, z: z });
+      });
+    }
 
     // 設置初始位置
     setInitialPositions();
+    setStaticObjectsPositions();
 
     // 開始運行更新函數
     updateFishPosition();
