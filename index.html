@@ -49,11 +49,9 @@
 
     function triggerAR() {
       
-      if (arButton) {
 
           //arButton.click();  // 模擬點擊 AR 按鈕
-          modelViewer.activateAR();
-      }
+          //modelViewer.activateAR();
     }
 
     if(isMobileDeviceAR()){
@@ -64,7 +62,7 @@
             //modelViewer.activateAR();
             arButton = modelViewer.shadowRoot.querySelector('#default-ar-button');
             setTimeout(() => {
-              triggerAR();
+              //triggerAR();
             },1000);
             
         });
