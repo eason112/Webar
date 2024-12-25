@@ -59,6 +59,10 @@
         modelViewer.addEventListener('load', function() {
             console.log('Model-viewer has fully loaded.');
             // 等待 shadowRoot 生成，並觸發 AR 按鈕
+            backButton.click();
+            setTimeout(() => {
+              
+            },1000);
             
         });
     }
@@ -68,12 +72,13 @@
     // 为返回按钮添加点击事件
     backButton.addEventListener("click", function() {
       // 尝试关闭当前页面
-      window.close();
+      modelViewer.activateAR();
+      //window.close();
     });
-    document.addEventListener("touchstart", function() {
+    document.addEventListener("click", function() {
       // 尝试关闭当前页面
       if(!ar){
-        modelViewer.activateAR();
+        //modelViewer.activateAR();
         ar=true;
       }
     });
