@@ -114,16 +114,13 @@
               }
 
               // 設定影片源並顯示影片區域
-              document.getElementById('video-source').src = videoSrc;
-              document.getElementById('video').load();
-              document.getElementById('video').play();
-              document.getElementById('video-container').style.display = 'block'; // 顯示影片區域
+              if (videoUrl) {
+                window.location.href = videoUrl;
+              }
             }.bind(this));
 
             marker.addEventListener('markerLost', function() {
-              // 影片結束後隱藏影片區域
-              document.getElementById('video').pause();
-              document.getElementById('video-container').style.display = 'none'; // 隱藏影片區域
+              // 清除影片（如果需要）
             }.bind(this));
           }
         });
